@@ -13,6 +13,8 @@
 		0401D7D62211F978005A842B /* Skafferiet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0401D7D42211F978005A842B /* Skafferiet.xcdatamodeld */; };
 		0401D7D82211F97A005A842B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0401D7D72211F97A005A842B /* Assets.xcassets */; };
 		0401D7DB2211F97A005A842B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0401D7D92211F97A005A842B /* LaunchScreen.storyboard */; };
+		0401D7E3221203C9005A842B /* obama-not-bad-l.png in Resources */ = {isa = PBXBuildFile; fileRef = 0401D7E2221203C9005A842B /* obama-not-bad-l.png */; };
+		0401D7E522120506005A842B /* SkafferietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401D7E422120506005A842B /* SkafferietViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0401D7D72211F97A005A842B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0401D7DA2211F97A005A842B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0401D7DC2211F97A005A842B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0401D7E2221203C9005A842B /* obama-not-bad-l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "obama-not-bad-l.png"; sourceTree = "<group>"; };
+		0401D7E422120506005A842B /* SkafferietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkafferietViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,11 @@
 			children = (
 				0401D7CD2211F978005A842B /* AppDelegate.swift */,
 				0401D7CF2211F978005A842B /* ViewController.swift */,
+				0401D7E422120506005A842B /* SkafferietViewController.swift */,
 				0401D7D12211F978005A842B /* Main.storyboard */,
 				0401D7D72211F97A005A842B /* Assets.xcassets */,
 				0401D7D92211F97A005A842B /* LaunchScreen.storyboard */,
+				0401D7E2221203C9005A842B /* obama-not-bad-l.png */,
 				0401D7DC2211F97A005A842B /* Info.plist */,
 				0401D7D42211F978005A842B /* Skafferiet.xcdatamodeld */,
 			);
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0401D7DB2211F97A005A842B /* LaunchScreen.storyboard in Resources */,
+				0401D7E3221203C9005A842B /* obama-not-bad-l.png in Resources */,
 				0401D7D82211F97A005A842B /* Assets.xcassets in Resources */,
 				0401D7D32211F978005A842B /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0401D7E522120506005A842B /* SkafferietViewController.swift in Sources */,
 				0401D7D02211F978005A842B /* ViewController.swift in Sources */,
 				0401D7CE2211F978005A842B /* AppDelegate.swift in Sources */,
 				0401D7D62211F978005A842B /* Skafferiet.xcdatamodeld in Sources */,
