@@ -11,10 +11,13 @@ import CoreData
 
 class SkafferietViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var adduppdatebutton: UIButton!
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var itemImageView: UIImageView!
     
     var imagePicker = UIImagePickerController()
+    var item : Item? = nil
     
     
     override func viewDidLoad() {
@@ -22,6 +25,14 @@ class SkafferietViewController: UIViewController, UIImagePickerControllerDelegat
         
         imagePicker.delegate = self
         
+        if item != nil {
+            itemImageView.image = UIImage(data: item!.image as! Data)
+            itemTextField.text = item!.title
+            
+            adduppdatebutton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
        
     }
     
@@ -42,14 +53,33 @@ class SkafferietViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBAction func cameraTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
+    
     @IBAction func addTapped(_ sender: Any) {
         
+        if item != nil {
+            item!.title = itemTextField.text
+            item!.image = UIImage.pngData(itemImageView.image!)()
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let item = Item(context: context)
+            item.title = itemTextField.text
+            item.image = UIImage.pngData(itemImageView.image!)()
+        }
+        
+        
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+    }
+    @IBAction func deleteTapped(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let item = Item(context: context)
-        item.title = itemTextField.text
-        item.image = UIImage.pngData(itemImageView.image!)()
+        context.delete(item!)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         

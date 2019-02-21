@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="OQz-6A-xZu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3RU-st-abK">
                             <connections>
-                                <segue destination="eJT-WD-oe9" kind="show" id="jZB-2A-qcM"/>
+                                <segue destination="eJT-WD-oe9" kind="show" identifier="itemSegue" id="jZB-2A-qcM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,7 +55,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="obama-not-bad-l.png" translatesAutoresizingMaskIntoConstraints="NO" id="G7W-dB-jZi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7W-dB-jZi">
                                 <rect key="frame" x="47.5" y="104" width="280" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="4RH-e4-K1J"/>
@@ -78,13 +78,23 @@
                                     <action selector="addTapped:" destination="eJT-WD-oe9" eventType="touchUpInside" id="TSY-x9-fvD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-5r-WHy">
+                                <rect key="frame" x="165" y="464" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="eJT-WD-oe9" eventType="touchUpInside" id="gZx-TG-rAA"/>
+                                    <action selector="deleteTapped:" destination="eJT-WD-oe9" eventType="touchUpInside" id="iup-iY-puG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vO8-5r-WHy" firstAttribute="top" secondItem="Ger-uu-2O3" secondAttribute="bottom" constant="10" id="03F-aa-ffs"/>
                             <constraint firstItem="Ger-uu-2O3" firstAttribute="centerX" secondItem="hjY-7m-e9V" secondAttribute="centerX" id="2zN-f3-cnc"/>
                             <constraint firstItem="G7W-dB-jZi" firstAttribute="centerX" secondItem="hjY-7m-e9V" secondAttribute="centerX" id="CwD-QP-Yvh"/>
                             <constraint firstItem="G7W-dB-jZi" firstAttribute="top" secondItem="Buu-va-8fF" secondAttribute="top" constant="40" id="HUS-hu-TaS"/>
                             <constraint firstItem="Jx0-xj-HCc" firstAttribute="width" secondItem="G7W-dB-jZi" secondAttribute="width" id="N2E-ty-h7u"/>
+                            <constraint firstItem="vO8-5r-WHy" firstAttribute="centerX" secondItem="hjY-7m-e9V" secondAttribute="centerX" id="lLN-3y-r1w"/>
                             <constraint firstItem="Jx0-xj-HCc" firstAttribute="centerX" secondItem="G7W-dB-jZi" secondAttribute="centerX" id="qMk-h3-EDK"/>
                             <constraint firstItem="Ger-uu-2O3" firstAttribute="top" secondItem="Jx0-xj-HCc" secondAttribute="bottom" constant="20" id="s9n-RO-mbv"/>
                             <constraint firstItem="Jx0-xj-HCc" firstAttribute="top" secondItem="G7W-dB-jZi" secondAttribute="bottom" constant="30" id="z7s-Me-0Ya"/>
@@ -106,6 +116,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="adduppdatebutton" destination="Ger-uu-2O3" id="eqg-z3-EDh"/>
+                        <outlet property="deleteButton" destination="vO8-5r-WHy" id="GAm-WU-cfX"/>
                         <outlet property="itemImageView" destination="G7W-dB-jZi" id="YAZ-Je-F9N"/>
                         <outlet property="itemTextField" destination="Jx0-xj-HCc" id="4c4-N8-ng0"/>
                     </connections>
@@ -133,7 +145,4 @@
             <point key="canvasLocation" x="-199.19999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="obama-not-bad-l.png" width="1024" height="1024"/>
-    </resources>
 </document>
